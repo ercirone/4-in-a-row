@@ -1,0 +1,14 @@
+svg {
+  pointer-events: none;
+}
+
+.Grid {
+  display: block;
+  margin: 0 auto;
+}
+
+.Rect {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1px;
+}

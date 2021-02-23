@@ -1,0 +1,29 @@
+.Piece {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1px;
+}
+
+.R {
+  fill: rgb(255, 76, 76);
+  pointer-events: none;
+}
+
+.B {
+  fill: rgb(20, 149, 255);
+  pointer-events: none;
+}
+
+.E {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.Piece.highlighted {
+  stroke:rgb(31, 189, 0);
+  stroke-width: 3px;;
+}
+
+.E.disabled {
+  pointer-events: none;
+}
