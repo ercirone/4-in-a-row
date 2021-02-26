@@ -1,0 +1,24 @@
+.Column {
+    fill: none;
+    stroke: none;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.Column.disabled {
+    cursor: default;
+    pointer-events: none;
+}
+
+.Visible {
+    visibility: visible;
+}
+
+.Hidden {
+    visibility: hidden;
+}
+
+line {
+    stroke: rgb(148, 0, 0);
+    stroke-width: 5px;
+}
