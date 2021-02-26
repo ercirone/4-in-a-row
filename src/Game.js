@@ -21,24 +21,27 @@ class Game extends React.Component {
       <div className="game">
         <Grid
           pieces={this.state.pieces}
-          onClick={(column) => this.handleClick(column)}
+          onClick={(disabled, column) => this.handleClick(disabled, column)}
           gameOver={winning.length !== 0}
           highlighted={winning}
+          blueIsNext={this.state.blueIsNext}
           />
       </div>
     );
   }
 
-  handleClick(column) {
-    const columnToChange = this.state.pieces.filter((p,i) => (i%7 === column));
-    const row = columnToChange.findIndex(p => (p === 'E'));
-    const newPieceType = this.state.blueIsNext ? 'B' : 'R';
-    let newPieces = [...this.state.pieces];
-    newPieces[column + 7 * row] = newPieceType;
-    this.setState({
-      pieces: newPieces,
-      blueIsNext: !this.state.blueIsNext,
-    });
+  handleClick(disabled, column) {
+    if (!disabled) {
+      const columnToChange = this.state.pieces.filter((p,i) => (i%7 === column));
+      const row = columnToChange.findIndex(p => (p === 'E'));
+      const newPieceType = this.state.blueIsNext ? 'B' : 'R';
+      let newPieces = [...this.state.pieces];
+      newPieces[column + 7 * row] = newPieceType;
+      this.setState({
+        pieces: newPieces,
+        blueIsNext: !this.state.blueIsNext,
+      });
+    }
   }
 
   winningPieces() {
